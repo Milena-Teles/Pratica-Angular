@@ -8,6 +8,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { ModelComponent } from './model/model.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     MenuComponent,
     RodapeComponent,
     EntrarComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    ModelComponent
   ],
   imports: [
     BrowserModule,
