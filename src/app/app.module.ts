@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,7 +9,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { ModelComponent } from './model/model.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,13 @@ import { ModelComponent } from './model/model.component';
     RodapeComponent,
     EntrarComponent,
     CadastrarComponent,
-    ModelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
