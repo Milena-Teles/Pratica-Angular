@@ -13,6 +13,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FormsModule } from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
+import { TemDeleteComponent } from './delete/tem-delete/tem-delete.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { TemaComponent } from './tema/tema.component';
     CadastrarComponent,
     InicioComponent,
     TemaComponent,
+    TemDeleteComponent,
+    TemaEditComponent,
   ],
   imports: [
     BrowserModule,
