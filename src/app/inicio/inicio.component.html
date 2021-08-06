@@ -44,36 +44,6 @@
       </div>
 </div> 
 
-
-
-     <!-- <nav>
-        <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
-
-          <a class="nav-item nav-link active" id="nav-todas-tab" data-toggle="tab" href="#todas" role="tab" aria-controls="nav-todas" aria-selected="true">Todas as postagens</a>
-
-          <a class="nav-item nav-link" id="nav-minhas-tab" data-toggle="tab" href="#minhas" role="tab" aria-controls="nav-minhas" aria-selected="false">Minhas postagens</a>
-
-          <a class="nav-item nav-link" id="nav-tema-tab" data-toggle="tab" href="#tema" role="tab" aria-controls="nav-tema" aria-selected="false">Postagens por tema</a>
-        </div>
-      </nav>
-
-      <div class="tab-content" id="nav-tabContent">
-
-        <div class="tab-pane fade show active" id="todas" role="tabpanel" aria-labelledby="nav-todas-tab">Todas as postagens</div>
-
-        <div class="tab-pane fade" id="minhas" role="tabpanel" aria-labelledby="nav-minhas-tab">Minhas postagens</div>
-
-        <div class="tab-pane fade" id="tema" role="tabpanel" aria-labelledby="nav-tema-tab">Postagens por tema</div>
-
-      </div>
-
-</div> -->
-
-<!-- NAV-->
-
-
-
-
   
   <!-- Modal -->
   <div class="modal fade" id="novaPostagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -87,24 +57,26 @@
           
             <div class="form-group">
                 <label for="titulo">Titulo</label>
-                <input type="text" class="form-control" id="titulo" placeholder="Digite o titulo">
+                <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" placeholder="Digite o titulo">
             </div>
 
             <div class="form-group">
                 <label for="texto">Texto</label>
-                <textarea class="form-control" name="texto" id="texto" rows="3"></textarea>
+                <textarea [(ngModel)]="postagem.texto" class="form-control" name="texto" id="texto" rows="3"></textarea>
             </div>
 
             <div class="form-group">
-                <label for="texto">Escolha um tema ou<a routerLink='/tema' data-bs-dismiss="modal">Cadastre um novo tema</a>: </label>
-                <select name="tema" id="tema" class="form-control"></select>
-                <option value="">Temas</option>
-            </div>
+              <label for="texto">Escolha um tema ou<a routerLink='/tema' data-bs-dismiss="modal">Cadastre um novo tema</a>: </label>
+            <select name="tema" id="tema" class="form-select form-control" aria-label="Default select example" [(ngModel)]="idtema" (change)="findByIdTema()">
+              <option selected>Selecione um tema</option>
+              <option *ngFor="let item of listaTemas" value="{{item.id}}">{{item.descricao}}</option>
+            </select>
+          </div>
 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-success">Publicar</button>
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="publicar()">Publicar</button>
         </div>
       </div>
     </div>
