@@ -20,11 +20,11 @@ export class PostagemService {
 
     getAllPost(): Observable<Postagem[]>
     {
-      return this.http.get<Postagem[]>("http//:localhost:8080/postagens", this.token)
+      return this.http.get<Postagem[]>("http://localhost:8080/postagens", this.token);
     }
 
     postPostagem(postagem: Postagem): Observable<Postagem>
     {
-      return this.http.post<Postagem>(`${this.baseURL}/postagens`, postagem, this.token)
+      return this.http.post<Postagem>("http://localhost:8080/postagens", postagem, this.token);
     }
 }
