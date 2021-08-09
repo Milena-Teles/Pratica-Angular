@@ -32,7 +32,9 @@ export class InicioComponent implements OnInit {
     private authService: AuthService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+
+    window.scroll(0,0)
 
     if(!environment.token)
     {

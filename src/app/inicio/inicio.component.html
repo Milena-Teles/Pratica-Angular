@@ -69,13 +69,17 @@
             <p class="card-text mt-3">{{item.texto}}</p>
             <p class="card-text"><small class="text-muted">{{item.data | date: "dd/MM/yyyy"}} ás {{item.data | date:
                 "HH:mm"}}</small> </p>
+
+            <a [routerLink]="['/postagem-edit', item.id]" class="text-info me-3">Editar</a>
+            <a [routerLink]="['/postagem-delete', item.id]" class="text-danger">Deletar</a>
+
           </div>
         </div>
       </div>
 
     </div>
     <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">
-      
+
       <div class="card-columns" *ngFor='let tema of listaTemas'>
         <div class="card text-center" *ngFor='let item of tema.postagem'>
           <div class="card-body">
